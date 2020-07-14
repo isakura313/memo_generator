@@ -1,5 +1,8 @@
 import tkinter as tk
 from tkinter import ttk
+from PIL import Image, ImageTk
+import random
+
 
 def main():
     display = tk.Tk()
@@ -18,9 +21,15 @@ def log_pass(okno):
 def get_key(login, password):
     if login == 'codabra' and password == 'qwerty':
         print('okey')
+        mem_window()
 
 def mem_window():
     mem_display = tk.Toplevel()
+    img = Image.open("pic/" +f"{str(random.randint(1,5))}.png")
+    img = ImageTk.PhotoImage(img)
+
+    picture = tk.Label(mem_display, image=img)
+    picture.grid(row=0, column=0)
     mem_display.mainloop()
 
 if __name__ == "__main__":
