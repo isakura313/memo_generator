@@ -23,6 +23,14 @@ def log_pass(okno):
     check_btn = ttk.Button(okno, text = "Войти", command = lambda: get_key(login.get(), password.get()))
     check_btn.grid(row = 2, column = 1)
 
+    forget_btn = ttk.Button(okno, text= "Забыли пароль? ")
+    forget_btn.grid(row =3, column = 0)
+
+def forget_pass():
+    forget_display = tk.Toplevel()
+    forget_display.mainloop()
+
+
 def get_key(login, password):
     if login == logiN and password == passW:
         mem_window()
