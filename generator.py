@@ -2,10 +2,12 @@ import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
 import random
+import os
 
 
 def main():
     display = tk.Tk()
+    display.geometry('400x400')
     log_pass(display)
     display.mainloop()
 
@@ -16,16 +18,18 @@ def log_pass(okno):
     password = tk.Entry(okno)
     password.grid(row = 1, column = 0)
     check_btn = ttk.Button(okno, text = "Войти", command = lambda: get_key(login.get(), password.get()))
-    check_btn.grid(row = 2, column = 0)
+    check_btn.grid(row = 2, column = 1)
 
 def get_key(login, password):
     if login == 'codabra' and password == 'qwerty':
-        print('okey')
         mem_window()
 
 def mem_window():
     mem_display = tk.Toplevel()
-    img = Image.open("pic/" +f"{str(random.randint(1,5))}.png")
+    dir_images = os.getcwd() + '/pic'
+    rand_img = random.choice(dir_images)
+
+    img = Image.open("pic/" + rand_img)
     img = ImageTk.PhotoImage(img)
 
     picture = tk.Label(mem_display, image=img)
