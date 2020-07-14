@@ -35,6 +35,18 @@ def forget_pass():
     secret_answer = ttk.Entry(forget_display)
     secret_answer.grid(row = 1, column = 0)
 
+    check_btn = ttk.Button(forget_display, text = "Проверить", command = lambda: answer(forget_display,
+                                                                                        secret_question.get(),
+                                                                                        secret_answer.get()))
+
+    check_btn.grid(row =2, column = 0)
+
+    def answer(okno, quest, answer):
+        dict_quest = {"Как зовут маму": "Татьяна", "Номер школы": "171"}
+        if dict_quest[quest] == answer:
+            okno.destroy()
+            new_log_pass_window = tk.Tk()
+            new_log_pass_window.mainloop()
     forget_display.mainloop()
 
 
