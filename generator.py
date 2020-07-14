@@ -23,11 +23,18 @@ def log_pass(okno):
     check_btn = ttk.Button(okno, text = "Войти", command = lambda: get_key(login.get(), password.get()))
     check_btn.grid(row = 2, column = 1)
 
-    forget_btn = ttk.Button(okno, text= "Забыли пароль? ")
+    forget_btn = ttk.Button(okno, text= "Забыли пароль? ", command = lambda: forget_pass())
     forget_btn.grid(row =3, column = 0)
 
 def forget_pass():
     forget_display = tk.Toplevel()
+
+    secret_question = ttk.Combobox(forget_display, values = ("Как зовут маму", "Номер школы"))
+    secret_question.grid(row = 0, column = 0)
+
+    secret_answer = ttk.Entry(forget_display)
+    secret_answer.grid(row = 1, column = 0)
+
     forget_display.mainloop()
 
 
