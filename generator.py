@@ -27,9 +27,11 @@ def get_key(login, password):
 def mem_window():
     mem_display = tk.Toplevel()
     dir_images = os.getcwd() + '/pic'
+    dir_images = os.listdir(dir_images)
     rand_img = random.choice(dir_images)
 
     img = Image.open("pic/" + rand_img)
+
     img = ImageTk.PhotoImage(img)
 
     picture = tk.Label(mem_display, image=img)
