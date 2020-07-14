@@ -6,6 +6,9 @@ import os
 
 
 def main():
+    global logiN, passW
+    logiN = 'login'
+    passW = 'password'
     display = tk.Tk()
     display.geometry('400x400')
     log_pass(display)
@@ -21,7 +24,7 @@ def log_pass(okno):
     check_btn.grid(row = 2, column = 1)
 
 def get_key(login, password):
-    if login == 'codabra' and password == 'qwerty':
+    if login == logiN and password == passW:
         mem_window()
 
 def mem_window():
@@ -29,7 +32,6 @@ def mem_window():
     dir_images = os.getcwd() + '/pic'
     dir_images = os.listdir(dir_images)
     rand_img = random.choice(dir_images)
-
     img = Image.open("pic/" + rand_img)
 
     img = ImageTk.PhotoImage(img)
