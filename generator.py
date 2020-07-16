@@ -51,9 +51,16 @@ def forget_pass():
             new_pass = ttk.Entry(new_log_pass_window)
             new_pass.grid(row =1, column = 0) #поле нового пароля
 
-            new_btn = ttk.Button(new_log_pass_window, text = "Создать новый логин и пароль")
+            new_btn = ttk.Button(new_log_pass_window, text = "Создать новый логин и пароль",
+                                 command= lambda: new_acc(new_log_pass_window, new_log.get(), new_pass.get()) )
             new_btn.grid(row = 2, column =0)
             new_log_pass_window.mainloop()
+
+    def new_acc(okno, login, password):
+        okno.destroy()
+        global logiN, passW
+        logiN = login
+        passW = password
     forget_display.mainloop()
 
 
