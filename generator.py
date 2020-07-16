@@ -38,7 +38,6 @@ def forget_pass():
     check_btn = ttk.Button(forget_display, text = "Проверить", command = lambda: answer(forget_display,
                                                                                         secret_question.get(),
                                                                                         secret_answer.get()))
-
     check_btn.grid(row =2, column = 0)
 
     def answer(okno, quest, answer):
@@ -52,7 +51,7 @@ def forget_pass():
             new_pass = ttk.Entry(new_log_pass_window)
             new_pass.grid(row =1, column = 0) #поле нового пароля
 
-            new_btn = ttk.Button(new_log_pass_window, text = "Новый логин и пароль")
+            new_btn = ttk.Button(new_log_pass_window, text = "Создать новый логин и пароль")
             new_btn.grid(row = 2, column =0)
             new_log_pass_window.mainloop()
     forget_display.mainloop()
