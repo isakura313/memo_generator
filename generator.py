@@ -46,6 +46,14 @@ def forget_pass():
         if dict_quest[quest] == answer:
             okno.destroy()
             new_log_pass_window = tk.Tk()
+            new_log = ttk.Entry(new_log_pass_window)
+            new_log.grid(row = 0, column = 0)
+
+            new_pass = ttk.Entry(new_log_pass_window)
+            new_pass.grid(row =1, column = 0) #поле нового пароля
+
+            new_btn = ttk.Button(new_log_pass_window, text = "Новый логин и пароль")
+            new_btn.grid(row = 2, column =0)
             new_log_pass_window.mainloop()
     forget_display.mainloop()
 
